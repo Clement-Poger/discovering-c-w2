@@ -44,6 +44,14 @@ gcc main.c -o programme
 
 Pour les projets modulaires, il peut aussi être nécessaire de compiler plusieurs fichiers sources ensemble.
 
+Lancez les commandes depuis le dossier du projet concerné. Si le projet contient plusieurs fichiers source, indiquez-les tous lors de la compilation, par exemple :
+
+```bash
+gcc main.c fonctions.c -o programme
+```
+
+Remplacez `fonctions.c` par le nom du fichier source à compiler avec `main.c`.
+
 ## Compétences couvertes
 
 - fonctions séparées dans plusieurs fichiers,
