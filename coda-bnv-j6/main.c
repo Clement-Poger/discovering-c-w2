@@ -8,8 +8,7 @@ int main(void) {
     printf("Longueur de la chaine %s : %d\n", word, str_len(word));
     printf("%s = %s ? : %d (%s)\n", word, word2, str_cmp(word, word2),(str_cmp(word, word2)==0) ? "True" : "False");
     printf("%s = %s ? : %d (%s)\n", word, word, str_cmp(word, word),(str_cmp(word, word)==0) ? "True" : "False");
-    printf("%s <->", word);
+    printf("%s <-> ", word);
     str_rev(word);
-    printf("\n");
     return EXIT_SUCCESS;
 }

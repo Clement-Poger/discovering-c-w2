@@ -1,19 +1,17 @@
 #include <stdio.h>
-#include "./str_len.h"
+#include "utils.h"
 
 void str_rev(char *str) {
     int left = 0;
-    int right = str_len(str);
-
-    // Swap characters from both ends
-    while (left < right){
+    int right = str_len(str)-1;
+    char reverse[str_len(str)-1];
+    
+    while (right >= 0){
+        reverse[left] = str[right];
         right--;
-
-        char temp = str[left];
-        str[left] = str[right];
-        str[right] = temp;
-
         left++;
     }
-    printf("%s", str);
+    reverse[left] = '\0';
+    printf("%s\n", reverse);
 }
+
