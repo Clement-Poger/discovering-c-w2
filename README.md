@@ -27,11 +27,28 @@ Ensemble d'exercices et de bonus centrés sur l'apprentissage de la programmatio
 - `bonus-2` : exercices complémentaires de logique et de calcul.
 
 ### 2. `coda-bnv-j6`
-Projet dédié aux chaînes de caractères et aux fonctions utilitaires.
+#### Projet dédié aux chaînes de caractères et aux fonctions utilitaires.
 - `str_len` : calcul de la longueur d'une chaîne,
 - `str_rev` : inversion d'une chaîne,
 - `str_cmp` : comparaison de deux chaînes,
 - affichage des résultats dans le `main.c`.
+
+#### Projet dédié aux pointeurs.
+- `count_words` : calcul du nombre de mot d'une chaîne,
+- `revert_words` : inversion d'une chaîne,
+- `str_len` : calcul de la longueur d'une chaîne,
+- `swap_ptr` : échange de deux variables,
+- affichage des résultats dans le `main.c`.
+
+#### Projet dédié aux listes et pointeurs.
+- `sort_number` : trieur global,
+- `sort_number_asc` : trier dans l'ordre croissant une liste de nombre,
+- `sort_number_dsc` : trier dans l'ordre décroissant une liste de nombre,
+- affichage des résultats dans le `main.c`.
+
+### 3. `coda-bnv-j7`
+
+### 4. `coda-bnv-j8`
 
 ## Compilation
 
