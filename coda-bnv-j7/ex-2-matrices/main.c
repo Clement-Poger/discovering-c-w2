@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "./utils/utils.h"
 
+// SI UTILISE, AJOUTER UN FREE DE LA VAR D'ACCUEIL
+
 int main()
 {
 	char ** str_tab = malloc(4 * sizeof(*str_tab));

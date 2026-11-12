@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include "./utils.h"
 
+// SI UTILISE, AJOUTER UN FREE DE LA VAR D'ACCUEIL
+
 char *str_cpy_rev(char * str)
 {
     int len = str_len(str);
