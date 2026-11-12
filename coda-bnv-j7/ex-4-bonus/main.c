@@ -6,8 +6,8 @@ int main()
 {
 	char * str;
 	
-	str = str_cpy_rev("\nHello World!");
-	printf("Voici ma chaine copiée et reverse:\n%s", str);
+	str = str_cpy_rev("Hello World!");
+	printf("Voici ma chaine copiée et inversée:\n%s", str);
 
 	free(str);
 	exit(0);
