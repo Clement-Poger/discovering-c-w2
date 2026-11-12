@@ -47,6 +47,17 @@ Ensemble d'exercices et de bonus centrés sur l'apprentissage de la programmatio
 - affichage des résultats dans le `main.c`.
 
 ### 3. `coda-bnv-j7`
+#### Projet de manipulation avancée des chaînes et des tableaux de chaînes.
+- `ex-1-manipulation` : copie de chaînes, calcul de longueur et modularisation avec fichiers `utils`.
+- `ex-2-matrices` : création et affichage d'un tableau de chaînes, gestion dynamique de mémoire.
+- `ex-3-prototypage` : prototypage des fonctions et traitement des arguments `argv` dans un `main.c` structuré.
+- `ex-4-bonus` : copie inversée d'une chaîne avec une fonction dédiée en bonus.
+
+#### Points abordés
+- manipulation d'arguments et tableaux de chaînes,
+- modularisation du code via `utils.h` et plusieurs fichiers `.c`,
+- gestion de la mémoire dynamique,
+- prototypage et organisation d'un projet C plus avancé.
 
 ### 4. `coda-bnv-j8`
 
