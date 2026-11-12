@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 void print_tab(char ** tab)
@@ -9,5 +8,5 @@ void print_tab(char ** tab)
         printf("%s\n", tab[i]);
 		i++;
 	}
-
+	return 0;
 }
