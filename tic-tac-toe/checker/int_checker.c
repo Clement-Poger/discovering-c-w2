@@ -5,7 +5,7 @@
 
 int int_checker(int min, int max) {
     int option;
-    while (scanf("%d", &option) != 1 || (option < min && option > max)) {
+    while (scanf("%d", &option) != 1 || (option < min || option > max)) {
             printf(RED " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
             printf(RED " ┃         "BRED"La valeur n'est pas comprise entre %d et %d. "RED"        ┃\n", min, max);
             printf(RED " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" CRESET);

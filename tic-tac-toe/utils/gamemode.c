@@ -18,17 +18,7 @@ int choose_gamemode() {
     printf(BBLU " ┃    "BCYN"Joueur VS Ordinateur"BBLU"   ┃    ┃      "BCYN"Joueur VS Joueur"BBLU"     ┃\n");
     printf(BBLU " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
     printf(BLU " >> Choix : " CRESET);
-    while (scanf("%d", &option) != 1 || (option != 1 && option != 2)) {
-        printf(RED " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
-        printf(RED " ┃         "BRED"La valeur n'est pas comprise entre 1 et 2. "RED"        ┃\n");
-        printf(RED " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" CRESET);
-        int character;
-        while ((character = getchar()) != '\n' && character != EOF) {
-        }
-        if (character == EOF) {
-            return EXIT_FAILURE;
-        }
-    }
+    option = int_checker(1,2);
     if (option == 1) {
         game_ordi();
     } else if (option == 2) {

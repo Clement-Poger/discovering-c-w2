@@ -1,5 +1,6 @@
 #ifndef __UTILS_H__
 #define __UTILS_H__
+#include <unistd.h>
 #include "./couleurs.h"
 #include "../env/env.h"
 #include "../board/board.h"

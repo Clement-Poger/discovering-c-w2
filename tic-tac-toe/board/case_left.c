@@ -7,7 +7,7 @@ int case_restantes() {
     // Vérification des lignes et des colonnes
     for (int i = 0; i < lenght; i++) {
         for (int j = 0; j < lenght; j++) {
-            if (GAME_BOARD[i][0] != 0) {
+            if (GAME_BOARD[i][j] != 0) {
                 cases--;
             }
         }

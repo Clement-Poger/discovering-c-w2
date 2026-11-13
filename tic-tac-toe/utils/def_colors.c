@@ -52,6 +52,14 @@ void def_players_colors() {
         }
         system("clear");
     }
+    printf(BBLU " %s┏━━━━━━━━━ Player 1 ━━━━━━━━━┓  %s┏━━━━━━━━━ Player 2 ━━━━━━━━━┓\n", box1_color, box2_color);
+    printf(BBLU " %s┃  %s▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%s  ┃  %s┃  %s▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%s  ┃\n",
+                 box1_color, color_wheel[pl1_color], box1_color, box2_color, color_wheel[pl2_color], box2_color);
+    printf(BBLU " %s┃  "CRESET" Switch: 1 ━ Confirm: 3 %s  ┃  %s┃  "CRESET" Switch: 2 ━ Confirm: 4 %s  ┃\n",
+                 box1_color, box1_color, box2_color, box2_color);
+    printf(BBLU " %s┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  %s┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n", box1_color, box2_color);
+    sleep(1);
+    system("clear");
 
     ENV_PLAYER_1_COLOR = color_wheel[pl1_color];
     ENV_PLAYER_2_COLOR = color_wheel[pl2_color];

@@ -20,7 +20,7 @@ int game() {
         show_board(GAME_BOARD);
         printf(BLU " >> Player %d [%s▓▓▓▓"BLU"] ━━ Choix : " CRESET, playing_player, (playing_player == 1) ? ENV_PLAYER_1_COLOR : ENV_PLAYER_2_COLOR);
 
-        int option = int_checker(0,8);
+        int option = board_checker(0, 8, playing_player);
         
         int i = option / 3;
         int j = option % 3;

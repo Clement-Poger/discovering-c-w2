@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <unistd.h>
 #include "./utils.h"
 
 int game_ordi() {
@@ -14,20 +13,19 @@ int game_ordi() {
     while (!win) {
         if (case_restantes() == 0) {
             win = !win;
-            is_win = 5;
+            is_win = 4;
             break;
         }
         show_board(GAME_BOARD);
         printf(BLU " >> Player %d [%s▓▓▓▓"BLU"] ━━ Choix : " CRESET, playing_player, ENV_PLAYER_1_COLOR);
         
-        int option = int_checker(0,8);
+        int option = board_checker(0, 8, playing_player);
         
         int i = option / 3;
         int j = option % 3;
         
         if (GAME_BOARD[i][j] == 0) {
             GAME_BOARD[i][j] = playing_player;
-            show_board(GAME_BOARD);
             system("clear");
 
             is_win = is_winner();
@@ -52,10 +50,10 @@ int game_ordi() {
                     j = option % 3;
                 } while (GAME_BOARD[i][j] != 0);
                 show_board(GAME_BOARD);
-                GAME_BOARD[i][j] = 3;
-                printf(BLU " >> Ordinateur %s[▓▓▓▓] "BLU"━━ Choix : %d" CRESET, ENV_PLAYER_2_COLOR, option);
+                printf(BLU " >> Ordinateur [%s▓▓▓▓"BLU"] ━━ Choix : "CRESET"%d\n", ENV_PLAYER_2_COLOR, option);
                 sleep(1);
                 system("clear");
+                GAME_BOARD[i][j] = 3;
             }
 
         } else {

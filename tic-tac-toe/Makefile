@@ -15,7 +15,8 @@ SRCS = ./main.c \
 		./board/case_left.c \
 		./board/gest_board.c \
 		./board/winner.c \
-		./checker/int_checker.c
+		./checker/int_checker.c \
+		./checker/board_checker.c
 
 all: $(NAME)
 

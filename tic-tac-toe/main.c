@@ -25,7 +25,7 @@ int main() {
     int option = int_checker(1,2);
     if (option == 2) {
         def_players_colors();
-
+        main();
     } else if (option == 1) {
         choose_gamemode();
     }    

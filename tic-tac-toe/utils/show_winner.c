@@ -8,7 +8,7 @@ void show_winner(int winner) {
         printf(RED " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
         printf(RED " ┃        "BRED"Dommage, l'Ordinateur s'est révélé meilleur."RED"        ┃\n");
         printf(RED " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" CRESET);
-    } if (winner == 4) {
+    } else if (winner == 4) {
         printf(MAG " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
         printf(MAG " ┃             "BMAG"Bien tenté, mais c'est une égalité."MAG"            ┃\n");
         printf(MAG " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" CRESET);
