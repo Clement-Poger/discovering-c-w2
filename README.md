@@ -60,6 +60,17 @@ Ensemble d'exercices et de bonus centrés sur l'apprentissage de la programmatio
 - prototypage et organisation d'un projet C plus avancé.
 
 ### 4. `coda-bnv-j8`
+#### Projet mêlant scripts shell et mini projet C.
+- `ex-1` : script `countdown.sh` pour réaliser un compte à rebours en ligne de commande.
+- `ex-2` : script `convertor.sh` pour effectuer une conversion de valeurs selon une logique définie.
+- `ex-3` : script `generator.sh` pour générer automatiquement du contenu ou des données.
+- `mon-projet` : mini projet C structuré avec `main.c` et `mon-projet.h`.
+
+#### Points abordés
+- automatisation avec des scripts Bash,
+- manipulation de l’entrée/sortie terminal,
+- organisation d’un projet en C avec fichiers séparés,
+- modularisation et lisibilité du code.
 
 ## Compilation
 
