@@ -17,7 +17,9 @@ SRCS = main.c \
 	src/settings/configure_computer_difficulty.c \
 	src/settings/configure_player_colors.c \
 	src/ui/display_board.c \
+	src/ui/display_explainations.c \
 	src/ui/display_game_result.c \
+	src/ui/explaination_step.c \
 	src/ui/player_color.c \
 	src/ui/terminal_colors.c \
 	src/utils/find_string_index.c \

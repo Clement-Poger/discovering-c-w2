@@ -4,8 +4,6 @@
 #include "../../header/ui.h"
 
 void display_game_result(int winner) {
-    // system("clear");
-    // Affichage de la "box" de victoire
     if (winner == 3) {
         printf(RED " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
         printf(RED " ┃        "BRED"Dommage, l'Ordinateur s'est révélé meilleur."RED"        ┃\n");

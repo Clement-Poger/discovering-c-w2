@@ -8,6 +8,6 @@ const char *get_player_color(int player_mark) {
     } else if (player_mark == 2 || player_mark == 3) {
         return player_two_color;
     } else {
-        return BLU;
+        return BLK;
     }
 }
