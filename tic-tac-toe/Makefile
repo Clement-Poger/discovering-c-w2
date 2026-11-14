@@ -1,33 +1,35 @@
+# Makefile
+
 NAME = tic_tac_toe
 
-SRCS = ./main.c \
-		./utils/color_id.c \
-		./utils/computer_guess.c \
-		./utils/couleurs.c \
-		./utils/def_colors.c \
-		./utils/def_level_ia.c \
-		./utils/game.c \
-		./utils/gamemode.c \
-		./utils/game_ordi.c \
-		./utils/get_index.c \
-		./utils/has_won.c \
-		./utils/minimax.c \
-		./utils/show_board.c \
-		./utils/show_winner.c \
-		./utils/str_len.c \
-		./utils/str_rep.c \
-		./board/case_left.c \
-		./board/gest_board.c \
-		./board/winner.c \
-		./checker/int_checker.c \
-		./checker/board_checker.c
+SRCS = main.c \
+	src/ai/choose_computer_move.c \
+	src/ai/has_winning_line.c \
+	src/ai/minimax.c \
+	src/board/control_board.c \
+	src/board/count_empty_cells.c \
+	src/board/find_winner.c \
+	src/game/computer_game.c \
+	src/game/game_mode_selection.c \
+	src/game/two_player_game.c \
+	src/input/board_position_input.c \
+	src/input/integer_input.c \
+	src/settings/configure_computer_difficulty.c \
+	src/settings/configure_player_colors.c \
+	src/ui/display_board.c \
+	src/ui/display_game_result.c \
+	src/ui/player_color.c \
+	src/ui/terminal_colors.c \
+	src/utils/find_string_index.c \
+	src/utils/repeat_character.c \
+	src/utils/string_length.c
 
 all: $(NAME)
 
 $(NAME): $(SRCS)
-		gcc $(CFLAGS) $(SRCS) -o $(NAME)
+	gcc $(CFLAGS) $(SRCS) -o $(NAME)
 
 fclean:
-		rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

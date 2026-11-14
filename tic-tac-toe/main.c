@@ -1,14 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "./utils/utils.h"
-#include "./env/env.h"
-#include "./checker/checker.h"
+#include "./header/game.h"
+#include "./header/game_state.h"
+#include "./header/input.h"
+#include "./header/settings.h"
+#include "./header/terminal_colors.h"
 
-const char *ENV_PLAYER_1_COLOR = BGRN;
-const char *ENV_PLAYER_2_COLOR = BRED;
-const int lenght = 3;
-char **GAME_BOARD;
-int COMPUTER_LEVEL = 1;
+const char *player_one_color = BGRN;
+const char *player_two_color = BRED;
+const int BOARD_SIZE = 3;
+char **game_board;
+int computer_difficulty = 1;
 
 int main() {
     // Création de la Grille de jeu
@@ -23,11 +25,11 @@ int main() {
     printf(BBLU " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
     printf(BLU " >> Choix : " CRESET);
     
-    int option = int_checker(1,2);
+    int option = read_integer_in_range(1,2);
     if (option == 2) {
-        def_players_colors();
+        configure_player_colors();
         main();
     } else if (option == 1) {
-        choose_gamemode();
+        select_game_mode();
     }    
 }
