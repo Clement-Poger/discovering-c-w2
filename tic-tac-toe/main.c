@@ -8,6 +8,7 @@ const char *ENV_PLAYER_1_COLOR = BGRN;
 const char *ENV_PLAYER_2_COLOR = BRED;
 const int lenght = 3;
 char **GAME_BOARD;
+int COMPUTER_LEVEL = 1;
 
 int main() {
     // Création de la Grille de jeu

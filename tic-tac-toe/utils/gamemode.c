@@ -20,6 +20,7 @@ int choose_gamemode() {
     printf(BLU " >> Choix : " CRESET);
     option = int_checker(1,2);
     if (option == 1) {
+        def_ia_level();
         game_ordi();
     } else if (option == 2) {
         game();
