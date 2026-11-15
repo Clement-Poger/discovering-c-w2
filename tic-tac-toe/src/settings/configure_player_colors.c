@@ -8,8 +8,6 @@
 #include "../../header/terminal_colors.h"
 #include "../../header/string_utils.h"
 
-// https://www.quora.com/Can-the-define-value-be-changed
-
 void show_colors_save(char * color_wheel[], int pl1_color, int pl2_color) {
     for (size_t i = 1; i < 4; i++)
     {
