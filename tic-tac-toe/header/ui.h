@@ -1,3 +1,4 @@
+// Header : Fonctions liées à l'Affichage de l'Interface du Jeu.
 #ifndef TIC_TAC_TOE_UI_H
 #define TIC_TAC_TOE_UI_H
 

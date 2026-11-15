@@ -2,12 +2,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
+
 #include "../../header/game_state.h"
 #include "../../header/input.h"
 #include "../../header/settings.h"
 #include "../../header/terminal_colors.h"
 #include "../../header/string_utils.h"
 
+// Affiche une animation de sauvegarde des couleurs choisies.
 void show_colors_save(char * color_wheel[], int pl1_color, int pl2_color) {
     for (size_t i = 1; i < 4; i++)
     {
@@ -18,10 +20,11 @@ void show_colors_save(char * color_wheel[], int pl1_color, int pl2_color) {
                     repeat_character(i, '.'), repeat_character(3-i, ' '), repeat_character(i, '.'), repeat_character(3-i, ' '));
         printf(BGRN " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
         sleep(1);
-        system("clear");
+        clear_terminal();
     }
 }
 
+// Permet à chaque joueur de choisir et de confirmer sa couleur.
 void configure_player_colors(void) {
     bool pl1_confirm = false;
     bool pl2_confirm = false;
@@ -33,9 +36,10 @@ void configure_player_colors(void) {
     char * box1_color = BBLU;
     char * box2_color = BBLU;
 
-    system("clear");
+    clear_terminal();
 
     while (!pl1_confirm || !pl2_confirm) {
+        // Affiche les couleurs actuelles et les commandes de sélection.
         printf(BBLU " %s┏━━━━━━━━━ Player 1 ━━━━━━━━━┓  %s┏━━━━━━━━━ Player 2 ━━━━━━━━━┓\n", box1_color, box2_color);
         printf(BBLU " %s┃  %s▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%s  ┃  %s┃  %s▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓%s  ┃\n",
                      box1_color, color_wheel[pl1_color], box1_color, box2_color, color_wheel[pl2_color], box2_color);
@@ -45,6 +49,7 @@ void configure_player_colors(void) {
         printf(CYN " >> Choix : " CRESET);
 
         int option = read_integer_in_range(1, 4);
+        // Change ou confirme la couleur du joueur correspondant à l'option.
         if (option == 1 && !pl1_confirm) {
             pl1_color++;
             if (pl1_color == pl2_color) { pl1_color++; }
@@ -66,10 +71,11 @@ void configure_player_colors(void) {
             pl2_confirm = true;
             box2_color = BGRN;
         }
-        system("clear");
+        clear_terminal();
     }
     show_colors_save(color_wheel, pl1_color, pl2_color);
 
+    // Met à jour les couleurs utilisées par les deux joueurs.
     player_one_color = color_wheel[pl1_color];
     player_two_color = color_wheel[pl2_color];
 }

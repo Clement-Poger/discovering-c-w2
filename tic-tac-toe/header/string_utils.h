@@ -1,3 +1,4 @@
+// Header : Fonctions Utilitaires de Manipulation des Chaînes.
 #ifndef TIC_TAC_TOE_STRING_UTILS_H
 #define TIC_TAC_TOE_STRING_UTILS_H
 

@@ -1,8 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "../../header/game_state.h"
 #include "../../header/terminal_colors.h"
 #include "../../header/ui.h"
+
+// Affiche le plateau en colorant les cases selon le symbole qu'elles contiennent.
 
 void display_board(char **board) {
     int i = 0; int j = 0;

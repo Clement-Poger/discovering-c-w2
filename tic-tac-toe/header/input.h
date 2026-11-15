@@ -1,3 +1,4 @@
+// Header : Fonctions liées à la Saisie Utilisateur.
 #ifndef TIC_TAC_TOE_INPUT_H
 #define TIC_TAC_TOE_INPUT_H
 

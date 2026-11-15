@@ -1,3 +1,4 @@
+// Header : Fonctions liées à la Gestion du Tableau de Jeu.
 #ifndef TIC_TAC_TOE_BOARD_H
 #define TIC_TAC_TOE_BOARD_H
 

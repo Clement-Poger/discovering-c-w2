@@ -1,6 +1,8 @@
 #include "../../header/board.h"
 #include "../../header/game_state.h"
 
+// Compte le nombre de cases encore libres sur le plateau.
+
 int count_empty_cells(void) {
     int cases = 9;
     // Vérification des lignes et des colonnes

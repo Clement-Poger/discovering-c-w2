@@ -1,16 +1,19 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "../../header/game.h"
 #include "../../header/input.h"
 #include "../../header/settings.h"
 #include "../../header/terminal_colors.h"
 
+// Affiche les modes disponibles et lance la partie choisie.
 
-int select_game_mode(void) {
-    // Choix du Mode de Jeu
+void select_game_mode(void) {
+    // Affiche le menu de sélection du mode de jeu.
 
     int option;
-    system("clear");
+    clear_terminal();
+
     printf(BBLU " ┏━  Tic Tac Toe  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
     printf(BBLU " ┃  "BLU"Veuillez sélectionner un mode de jeu. "BBLU"                    ┃\n");
     printf(BBLU " ┃  "BLU"Précision :"BBLU"                                               ┃\n");
@@ -21,6 +24,7 @@ int select_game_mode(void) {
     printf(BBLU " ┃    "BCYN"Joueur VS Ordinateur"BBLU"   ┃    ┃      "BCYN"Joueur VS Joueur"BBLU"     ┃\n");
     printf(BBLU " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
     printf(BLU " >> Choix : " CRESET);
+    
     option = read_integer_in_range(1,2);
     if (option == 1) {
         configure_computer_difficulty();

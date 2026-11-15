@@ -1,13 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "../../header/terminal_colors.h"
 
+// Affiche l'écran d'explications correspondant à l'étape demandée.
+
 void show_explanations_step(int step) {
-    system("clear");
+    clear_terminal();
     printf(BBLU " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
     printf(BBLU " ┃                        "BLU"Explications"BBLU"                        ┃\n");
     printf(BBLU " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" CRESET);
 
+    // Présente l'indexation des cases, les couleurs puis le fonctionnement des IA.
     if (step == 0) {
             printf("\n\n\n\n\n");
             printf(BBLU "   ┏━━  Remplissage de la grille  ━━━━━━━━━━━━━━━━━━━━━━━━━━┓   \n");

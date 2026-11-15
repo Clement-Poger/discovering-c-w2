@@ -1,6 +1,8 @@
 #include "../../header/board.h"
 #include "../../header/game_state.h"
 
+// Recherche le symbole gagnant, ou renvoie zéro si la partie continue.
+
 int find_winner(void) {
     // Vérification des lignes et des colonnes
     for (int i = 0; i < BOARD_SIZE; i++) {
@@ -14,7 +16,6 @@ int find_winner(void) {
         }
     }
 
-    
     // Vérification des diagonales
     if (game_board[0][0] != 0 && game_board[0][0] == game_board[1][1] && game_board[1][1] == game_board[2][2]) {
         return game_board[0][0];

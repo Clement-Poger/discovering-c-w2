@@ -2,6 +2,7 @@
 #include "../../header/terminal_colors.h"
 #include "../../header/ui.h"
 
+// Renvoie la couleur associée au symbole du joueur ou une couleur neutre.
 const char *get_player_color(int player_mark) { 
     if (player_mark == 1) {
         return player_one_color;

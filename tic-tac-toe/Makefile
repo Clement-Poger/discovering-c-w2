@@ -26,6 +26,8 @@ SRCS = main.c \
 	src/utils/repeat_character.c \
 	src/utils/string_length.c
 
+CFLAGS = -Wall -Wextra -O3
+
 all: $(NAME)
 
 $(NAME): $(SRCS)

@@ -2,10 +2,13 @@
 #include "../../header/ai.h"
 #include "../../header/game_state.h"
 
+// Choisit le prochain coup de l'ordinateur selon le niveau configuré.
+
 int choose_computer_move(void) {
     if (computer_difficulty == 0) {
-        for (size_t i = 0; i < BOARD_SIZE; i++)
-        {   for (size_t j = 0; j < BOARD_SIZE; j++)
+        // Niveau facile : joue dans la première case libre.
+        for (int i = 0; i < BOARD_SIZE; i++)
+        {   for (int j = 0; j < BOARD_SIZE; j++)
             {   
                 if (game_board[i][j] == 0) {
                     return i * 3 + j;
@@ -13,9 +16,10 @@ int choose_computer_move(void) {
             }
         }
     } else if (computer_difficulty == 1) {
-        /* Normal: win immediately, block immediate losses, then favor good squares. */
-        for (size_t i = 0; i < BOARD_SIZE; i++)
-        {   for (size_t j = 0; j < BOARD_SIZE; j++)
+        /* Niveau normal : gagne si possible, bloque les coups dangereux et privilégie les cases fortes. */
+        // Cherche d'abord un coup qui permet à l'ordinateur de gagner.
+        for (int i = 0; i < BOARD_SIZE; i++)
+        {   for (int j = 0; j < BOARD_SIZE; j++)
             {   
                 if (game_board[i][j] == 0) {
                     game_board[i][j] = 2;
@@ -25,8 +29,9 @@ int choose_computer_move(void) {
                 }
             }
         }
-        for (size_t i = 0; i < BOARD_SIZE; i++)
-        {   for (size_t j = 0; j < BOARD_SIZE; j++)
+        // Sinon, empêche le joueur de compléter une ligne gagnante.
+        for (int i = 0; i < BOARD_SIZE; i++)
+        {   for (int j = 0; j < BOARD_SIZE; j++)
             {
                 if (game_board[i][j] == 0) {
                     game_board[i][j] = 1;
@@ -36,23 +41,25 @@ int choose_computer_move(void) {
                 }
             }
         }
+        // À défaut, privilégie le centre, puis les coins et les autres cases.
         if (game_board[1][1] == 0) return 4;
-        for (size_t i = 0; i < BOARD_SIZE; i += 2) {
-            for (size_t j = 0; j < BOARD_SIZE; j += 2) {
+        for (int i = 0; i < BOARD_SIZE; i += 2) {
+            for (int j = 0; j < BOARD_SIZE; j += 2) {
                 if (game_board[i][j] == 0) return i * 3 + j;
             }
         }
-        for (size_t i = 0; i < BOARD_SIZE; i++) {
-            for (size_t j = 0; j < BOARD_SIZE; j++) {
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
                 if (game_board[i][j] == 0) return i * 3 + j;
             }
         }
     } else {
-        /* Hardcore: perfect play with minimax_search. */
+        /* Niveau difficile : recherche du meilleur coup avec l'algorithme Minimax. */
         int best_score = -100;
         int best_move = -1;
-        for (size_t i = 0; i < BOARD_SIZE; i++)
-        {   for (size_t j = 0; j < BOARD_SIZE; j++)
+        // Simule chaque coup disponible et conserve celui au meilleur score.
+        for (int i = 0; i < BOARD_SIZE; i++)
+        {   for (int j = 0; j < BOARD_SIZE; j++)
             {   
                 if (game_board[i][j] == 0) {
                     game_board[i][j] = 2;

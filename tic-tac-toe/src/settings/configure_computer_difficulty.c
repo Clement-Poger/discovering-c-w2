@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+
 #include "../../header/game_state.h"
 #include "../../header/input.h"
 #include "../../header/settings.h"
 #include "../../header/string_utils.h"
 #include "../../header/terminal_colors.h"
 
-// https://www.quora.com/Can-the-define-value-be-changed
-
+// Permet de choisir et d'enregistrer le niveau de difficulté de l'ordinateur.
 
 void configure_computer_difficulty(void) {
     int level = computer_difficulty;
@@ -16,10 +16,10 @@ void configure_computer_difficulty(void) {
     int color_count = 3;
 
     bool ia_confirm = false;
-    system("clear");
+    clear_terminal();
 
     while (!ia_confirm) {
-        //Facile: 0 - Normal: 24 - Hardcore: 48
+        // Affiche le niveau courant et les commandes de navigation.
         printf(BBLU " ┏━━━━━━━━━━━━━━━━━  Choix du Niveau de l'IA  ━━━━━━━━━━━━━━━━┓\n");
         printf(BBLU " ┃   %sFacile "BBLU" ••••••••••••••  %sNormal"BBLU"  •••••••••••••  %sHardcore"BBLU"  ┃\n",
                 (level == 0) ? BGRN : BBLU, (level == 1) ? BYEL : BBLU, (level == 2) ? BRED : BBLU);
@@ -32,6 +32,7 @@ void configure_computer_difficulty(void) {
         printf(BLU " >> Choix : " CRESET);
 
         int option = read_integer_in_range(1, 3);
+        // Déplace le niveau ou confirme le choix.
         if (option == 1 && !ia_confirm) {
             level--;
         } else if (option == 2 && !ia_confirm) {
@@ -41,8 +42,9 @@ void configure_computer_difficulty(void) {
         }
         if (level < 0) { level = color_count - 1; }
         if (level > color_count - 1) { level = 0; }
-        system("clear");
+        clear_terminal();
     }
 
+    // Enregistre le niveau sélectionné pour la partie.
     computer_difficulty = level;
 }

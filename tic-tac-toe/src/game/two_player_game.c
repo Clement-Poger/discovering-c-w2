@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
 #include "../../header/board.h"
 #include "../../header/game.h"
 #include "../../header/game_state.h"
@@ -8,12 +9,15 @@
 #include "../../header/terminal_colors.h"
 #include "../../header/ui.h"
 
-int play_two_player_game(void) {
+// Gère une partie entre deux joueurs humains.
+
+void play_two_player_game(void) {
+    // Prépare le plateau et initialise le premier tour.
     game_board = create_board(BOARD_SIZE);
     int playing_player = 1;
     int is_win;
 
-    system("clear");
+    clear_terminal();
     bool win = false;
     while (!win) {
         if (count_empty_cells() == 0) {
@@ -22,6 +26,7 @@ int play_two_player_game(void) {
             break;
         }
 
+        // Demande le coup du joueur actif et place son symbole si la case est libre.
         display_board(game_board);
         printf(BLU " >> Player %d [%s▓▓▓▓"BLU"] ━━ Choix : " CRESET, playing_player, (playing_player == 1) ? player_one_color : player_two_color);
 
@@ -34,9 +39,9 @@ int play_two_player_game(void) {
             game_board[i][j] = playing_player;
             playing_player = (playing_player + 1) % 3;
             if (playing_player == 0) { playing_player++; };
-            system("clear");
+            clear_terminal();
         } else {
-            system("clear");
+            clear_terminal();
             printf(RED " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
             printf(RED " ┃                "BRED"Cette case est déjà occupée."RED"                ┃\n");
             printf(RED " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" CRESET);
@@ -48,7 +53,7 @@ int play_two_player_game(void) {
     }
     display_game_result(is_win);
 
-    // On libère la mémoire en fin de programme
+    // Libère le plateau à la fin de la partie.
     destroy_board(game_board);
 
 }

@@ -1,3 +1,4 @@
+// Header : Fonctions liées à la Configuration du Jeu.
 #ifndef TIC_TAC_TOE_SETTINGS_H
 #define TIC_TAC_TOE_SETTINGS_H
 

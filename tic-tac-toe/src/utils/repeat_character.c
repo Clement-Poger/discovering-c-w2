@@ -5,11 +5,13 @@
 #include <string.h>
 #include "../../header/string_utils.h"
 
+// Crée une chaîne contenant le caractère répété le nombre de fois demandé.
 char *repeat_character(int count, char character)
 {
     int name_length = count;
     if (name_length < 0) { name_length = 0; }
 
+    // Alloue la chaîne, la remplit puis ajoute son terminateur nul.
     char *result = malloc((size_t)(name_length + 1) * sizeof(char));
     if (result != NULL) {
         memset(result, (unsigned char)character, (size_t)name_length);

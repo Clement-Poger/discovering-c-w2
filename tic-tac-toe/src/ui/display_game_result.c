@@ -3,6 +3,8 @@
 #include "../../header/terminal_colors.h"
 #include "../../header/ui.h"
 
+// Affiche le message correspondant au gagnant ou à l'égalité.
+
 void display_game_result(int winner) {
     if (winner == 3) {
         printf(RED " ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");

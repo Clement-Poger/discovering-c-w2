@@ -1,11 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "./header/ui.h"
-#include "./header/game.h"
-#include "./header/game_state.h"
-#include "./header/input.h"
-#include "./header/settings.h"
-#include "./header/terminal_colors.h"
+
+#include "./header/tic-tac-toe.h"
+
+// Définition des Variables communes à tous les fichiers.
 
 const char *player_one_color = BGRN;
 const char *player_two_color = BRED;
@@ -14,9 +12,8 @@ char **game_board;
 int computer_difficulty = 1;
 
 int main() {
-    // Création de la Grille de jeu
-
-    system("clear");
+    // Affichage du Menu d'Accueil
+    clear_terminal();
     printf(BBLU " ┏━  Tic Tac Toe  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
     printf(BBLU " ┃  "BLU"Bonjour. Avant de lancer une partie, vous pouvez "BBLU"         ┃\n");
     printf(BBLU " ┃  "BLU"choisir vos couleurs de joueurs."BBLU"                          ┃\n");
@@ -26,6 +23,7 @@ int main() {
     printf(BBLU " ┗━━━━━━━━━━━━━━━━━┛  ┗━━━━━━━━━━━━━━━━━┛  ┗━━━━━━━━━━━━━━━━━━┛\n");
     printf(BLU " >> Choix : " CRESET);
     
+    // Redirection vers l'option choisi
     int option = read_integer_in_range(1,3);
     if (option == 1) {
         select_game_mode();

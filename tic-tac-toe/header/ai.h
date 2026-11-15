@@ -1,3 +1,4 @@
+// Header : Fonctions liées à l'IA de l'Ordinateur
 #ifndef TIC_TAC_TOE_AI_H
 #define TIC_TAC_TOE_AI_H
 

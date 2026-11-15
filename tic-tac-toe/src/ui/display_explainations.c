@@ -3,10 +3,13 @@
 #include "../../header/terminal_colors.h"
 #include "../../header/ui.h"
 
+// Parcourt les écrans d'explications jusqu'au choix de quitter.
+
 void display_explanations(void) {
     int option = 0;
     int step = 0;
     while (option != 3) {
+        // Affiche l'étape courante puis lit la commande de navigation.
         show_explanations_step(step);
         printf(BLU " >> Choix : " CRESET);
         option = read_integer_in_range(1, 3);
